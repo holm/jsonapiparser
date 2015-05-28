@@ -1,7 +1,7 @@
 {
   "name": "jsonapiparser",
   "main": "index.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/freeall/jsonapiparser",
   "description": "Parse JSONAPI format",
   "moduleType": [
