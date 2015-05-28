@@ -14,7 +14,6 @@
     "url": "https://github.com/freeall/jsonapiparser.git"
   },
   "scripts": {
-    "create-build": "browserify index.js -s jsonapiparser > builds/jsonapiparser.${npm_package_version}.js && browserify index.js -s jsonapiparser | uglifyjs -c > builds/jsonapiparser.${npm_package_version}.min.js",
-    "create-release": "browserify index.js -s jsonapiparser > builds/jsonapiparser.js && browserify index.js -s jsonapiparser | uglifyjs -c > builds/jsonapiparser.min.js"
+    "create-build": "./create-build.sh"
   }
 }
