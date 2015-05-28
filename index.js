@@ -39,9 +39,14 @@ module.exports = function(doc) {
     }
   }
 
-  doc.data = doc.data.map(function(elem) {
-    return populate(elem)
-  })
+  if (doc.data instanceof Array) {
+    doc.data = doc.data.map(function(elem) {
+      return populate(elem)
+    })  
+  } else {
+    doc.data = populate(doc.data)
+  }
+
 
   return doc
 }
