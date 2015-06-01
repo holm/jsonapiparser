@@ -7,7 +7,7 @@ module.exports = function(doc) {
       var innerPopulate = function(relationship) {
         var type = relationship.type
         var id = relationship.id
-        if (!relationships[type]) return relationship;
+        if (!relationships[type] || !relationships[type][id]) return relationship;
 
         relationship.attributes = relationships[type][id].attributes
         relationship.relationships = relationships[type][id].relationships
