@@ -28,7 +28,7 @@ module.exports = function(doc) {
   }
 
   var relationships = {}
-  doc.included.forEach(function(include) {
+  (doc.included || []).forEach(function(include) {
     relationships[include.type] = relationships[include.type] || {}
     relationships[include.type][include.id] = include
   })
