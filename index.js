@@ -39,14 +39,13 @@ module.exports = function(doc) {
     }
   }
 
-  if (doc.data instanceof Array) {
+  if (Array.isArray(doc.data)) {
     doc.data = doc.data.map(function(elem) {
       return populate(elem)
     })  
   } else {
     doc.data = populate(doc.data)
   }
-
 
   return doc
 }
