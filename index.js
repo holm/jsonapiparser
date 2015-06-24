@@ -14,12 +14,13 @@ module.exports = function(doc) {
         return relationship
       }
 
-      if (!Array.isArray(elem.relationships[relationshipName])) {
-        elem.relationships[relationshipName] = innerPopulate(elem.relationships[relationshipName])
+      var data = elem.relationships[relationshipName].data;
+      if (!Array.isArray(data)) {
+        elem.relationships[relationshipName] = innerPopulate(data)
         return
       }
 
-      elem.relationships[relationshipName] = elem.relationships[relationshipName].map(function(relationship) {
+      elem.relationships[relationshipName] = data.map(function(relationship) {
         return innerPopulate(relationship)
       })
     })
