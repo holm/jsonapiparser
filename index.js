@@ -14,7 +14,12 @@ module.exports = function(doc) {
         return relationship
       }
 
-      var data = elem.relationships[relationshipName].data;
+      var relationshipValue = elem.relationships[relationshipName];
+      if (!relationshipValue) {
+        return
+      }
+
+      var data = relationshipValue.data;
       if (!Array.isArray(data)) {
         elem.relationships[relationshipName] = innerPopulate(data)
         return
